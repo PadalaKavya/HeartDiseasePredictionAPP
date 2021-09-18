@@ -1,0 +1,462 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>💓HEART DISEASE PREDICTION</title>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Heart Disease Prediction</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/checkup">Check Up</a><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a><span class="sr-only">(current)</span></a>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Registration
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/regdoc">Register as Doctor</a>
+                <a class="dropdown-item" href="/reguser">Register as User</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="/login">Login</a></button>
+          </form>
+        </div>
+      </nav>
+      
+    <li><a href="">Home</a></li>
+    <li><a href="/regdoc">Register as Doctor</a></li>
+    <li><a href="/reguser">Register as Patient</a></li>
+    <li><a href="/checkup">Checkup</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/contact">Contact Us</a></li>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+    <title>Heart Disease Predictor</title>
+   
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/home.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/chat.css') }}" />
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous">
+    </script>
+ 
+  </head>
+  <body>
+    
+    <!-- prloader start  -->
+    <div id="spinner-wrapper">
+      <div class="sk-folding-cube">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+      </div>
+    </div>
+
+    <!-- prloader End  -->
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <a href="">
+              <div class="header-logo">
+                <a href=""><img class="image" img src="http://www.pradnyamedicallectures.com/img/logol2.png" height="50"><div class="name">Heart Disease Predictor</div></a>
+                
+             </div>
+             
+            </a>
+          </div>
+          <nav class="stroke">
+            <ul id="MenuItems">
+              <li><a href="/">Home</a></li>
+              <li><a href="/check" >Consultation</a></li>
+              <li><a href="/connect" >Doctor Subscribe</a></li>
+              <li><a href="/contact" >Contact</a></li>
+              {% if not loggedin %}
+                  <li><a href="/regdoc" >DoctorReg</a></li>
+                  <li><a href="/reguser" >UserReg</a></li>
+                  <li><a href="/login" >Login</a></li>
+              {% else %}
+                      <li><a href="/logout" >Logout</a></li> 
+				      {% endif %}
+
+              <li>
+            </ul>
+          </nav>
+          <img loading="lazy"
+            src="/static/menu.png"
+            alt=""
+            class="menu-icon"
+            onclick="menutoggle()" />
+        </div>
+
+     
+<section id="Home">
+ 
+        <div class="row">
+            <div class="col-2">
+                <img loading="lazy" src="https://www.wthub.org/wp-content/uploads/2019/11/heart_glow.gif"  alt="heartdisese" />
+              </div>
+          <div class="col-2">
+            <h1>Heart Disease Predictor</h1>
+            <p>
+              The need of healthy heart is very essential especially during these
+              times in order to keep oneself away from Covid-19.
+            </p>
+            <br />
+            <p>
+              Our website will help the users check if a person suffers from heart disease
+              or not by individually entering different details along with the age group.
+              The users can subscribe to email
+              alert service to get notification as soon as slots are avaialble
+              for doctor consultation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    
+    <div class="chat-bar-collapsible">
+      <button id="chat-button" type="button" class="collapsible">Chat with us!
+          <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+      </button>
+
+      <div class="content">
+          <div class="full-chat-block">
+             
+              <div class="outer-container">
+                  <div class="chat-container">
+                    
+                      <div id="chatbox">
+                          <h5 id="chat-timestamp"></h5>
+                          <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                      </div>
+
+                    
+                      <div class="chat-bar-input-block">
+                          <div id="userInput">
+                              <input id="textInput" class="input-box" type="text" name="msg"
+                                  placeholder="Tap 'Enter' to send a message">
+                              <p></p>
+                          </div>
+
+                          <div class="chat-bar-icons">
+                              <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                  onclick="heartButton()"></i>
+                              <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                  onclick="sendButton()"></i>
+                          </div>
+                      </div>
+                      <div id="chat-bar-bottom">
+                          <p></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <!-- Scroll Up Button -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <i class="fa fa-chevron-circle-up"></i>
+    </button>
+
+    <!-- Features -->
+    <div class="small-container">
+      <div class="row">
+        <div class="col-2">
+          <h2 style="color: rgb(88, 3, 3)">Are you having any of these symptoms ?</h2>
+          <p>
+            In order to avoid any doubts about getting a heart disease,
+            identify the following 4 symptoms of cardio vascular disease:
+          </p>
+        </div>
+        <div class="col-2">
+          <img loading="lazy" src="https://d2jx2rerrg6sh3.cloudfront.net/image-handler/picture/2016/5/3d_rendered_illustration_-_heart_attack-Sebastian_Kaulitzki_d8743c68eb3c4250817a2a23a847caeb-620x480.jpg" width="650" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="small-container">
+      <div class="row">
+        <div class="col-4">
+          <h3>Unusual Fatigue</h3>
+          <br />
+          <p>
+            Severe weakness, anxiety, fatigue,along with
+            Sweating, upset stomach, vomiting, or dizziness.
+          </p>
+        </div>
+        <div class="col-4">
+          <h3>Discomfort in chest</h3>
+          <br />
+          <p>
+            Pressure, pain, squeezing, or a sense of fullness in the center of the chest.
+          </p>
+          <br />
+        </div>
+        <div class="col-4">
+          <h3>Shortness of breath</h3>
+          <br />
+          <p>
+            Feeling shortness of breath leading to Fast or uneven heartbeat.
+          </p>
+          <br />
+        </div>
+        <div class="col-4">
+          <h3>Shoulder Pain</h3>
+          <br />
+          <p>
+            Pain or discomfort in the shoulder, arm, back, neck, or jaw
+          </p>
+          <br />
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Prevention -->
+    <div class="small-container">
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-2">
+          <h2 style="color: rgb(88, 3, 3)">Prevention of Heart disease</h2>
+          <p>
+            The success of having a healthy heart is strongly influenced by the strength of
+            the body's immune system. Therefore, there are several things that
+            can be tried to prevent heart disease to a maximum extent:
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <div class="prep">
+      <div class="container">
+        <div class="row">
+          <div class="col-2">
+            <img loading="lazy" src="https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop" alt="" />
+          </div>
+          <div class="col-2">
+            <div class="prat col-md-6">
+              <div class="icon-box">
+                <!-- <i class="fa fa-check-square"></i> -->
+                <h4>
+                  <i class="fa fa-times-circle" style="font-size: 40px"></i
+                  >&nbsp Avoid alcoholic beverages<i
+                    class="last fa fa-heart"
+                    style="font-size: 20px"
+                  ></i>
+                </h4>
+              </div>
+            </div>
+            <div class="prat col-md-6 mt-4 mt-md-0">
+              <div class="icon-box">
+                <i class="icofont-chart-bar-graph"></i>
+                <h4>
+                  <i class="fa fa-times-circle" style="font-size: 40px"></i
+                  >&nbsp Avoid Stress<i
+                    class="last fa fa-heart"
+                    style="font-size: 20px"
+                  ></i>
+                </h4>
+              </div>
+            </div>
+            <div class="prat col-md-6 mt-4 mt-md-0">
+              <div class="icon-box">
+                <h4>
+                  <i class="fa fa-bar-chart" style="font-size: 40px"></i>&nbsp
+                  Eat Healthy food<i
+                    class="last fa fa-heart"
+                    style="font-size: 20px"
+                  ></i>
+                </h4>
+              </div>
+            </div>
+            <div class="prat col-md-6 mt-4 mt-md-0">
+              <div class="icon-box">
+                <i class="icofont-settings"></i>
+                <h4>
+                  <i class="fa fa-check-circle" style="font-size: 40px"></i
+                  >&nbsp Get enough sleep<i
+                    class="last fa fa-heart"
+                    style="font-size: 20px"
+                  ></i>
+                </h4>
+              </div>
+            </div>
+            <div class="prat col-md-6 mt-4 mt-md-0">
+              <div class="icon-box">
+                <i class="icofont-settings"></i>
+                <h4>
+                  <i class="fa fa-check-circle" style="font-size: 40px"></i
+                  >&nbsp Excercise or physical activity<i
+                    class="last fa fa-heart"
+                    style="font-size: 20px"
+                  ></i>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <section id="end">
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Would be coming soon!</p>
+            <div class="app-logo">
+              <a
+                href="#"
+                ></a>
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <h1>Heart Disease Predictor</h1>
+            <p>Our goal is to help the world free from heart diseases.</p>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li><i class="fa fa-facebook-square"></i> Facebook</li>
+              <li><i class="fa fa-twitter-square"></i>    Twitter</li>
+              <li><i class="fa fa-instagram"></i> Instagram</li>
+              <li><i class="fa fa-youtube-play"></i> YouTube</li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p class="copyright">
+          <i class="fa fa-copyright"></i> Copyright 2021 - All rights reserved -
+          Made with
+          <i class="fa fa-heart" aria-hidden="true" style="color: red"></i
+          >&nbsp; for people across globe
+        </p>
+      </div>
+    </div>
+
+</section>
+  
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+      MenuItems.style.maxHeight = "0px";
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+
+    <!-- Script for Scroll Button -->
+    <script>
+      //Get the button
+      var mybutton = document.getElementById("myBtn");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+    </script>
+
+    </script>
+    
+    <script>
+      //Preloader Start
+      $(document).ready(function () {
+
+        preloaderFadeOutTime = 3000;
+
+        function hidePreloader() {
+          var preloader = $('#spinner-wrapper');
+          preloader.fadeOut(preloaderFadeOutTime);
+        }
+        hidePreloader();
+      });
+
+
+    </script>
+    
+    
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../static/js/chat.js"></script>
+    <script src="../static/js/responses.js"></script>
+
+</body>
+</html>
