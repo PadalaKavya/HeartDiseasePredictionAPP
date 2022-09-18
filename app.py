@@ -1,18 +1,10 @@
-#register as doctor - done
-#register as user - done
-#login - user/doctor - done
-#contact admin for issues : done
-#password hashing - done
-#logout -done
-#analysis of your heart:done
-#register an appointment with a doctor - done
+
 import os,hashlib
 from flask import Flask,render_template,request,session,redirect,url_for
 from flask_mysqldb import MySQL
 import urllib.request
 import re
 import smtplib
-from sendmail import sendmail
 import MySQLdb.cursors
 import numpy as np
 import pandas as pd
@@ -21,10 +13,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.secret_key = 'a'
-app.config['MYSQL_HOST'] = 'remotemysql.com'
-app.config['MYSQL_USER'] = '...'
-app.config['MYSQL_PASSWORD'] = '...'
-app.config['MYSQL_DB'] = '...'
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'heartdisease'
 mysql = MySQL(app)
 
 sc = pickle.load(open('sc.pkl', 'rb'))
